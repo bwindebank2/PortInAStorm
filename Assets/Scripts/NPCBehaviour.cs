@@ -14,6 +14,7 @@ public class NPCBehaviour : MonoBehaviour
     private void Start()
     {
         npcAS = GetComponent<AudioSource>();
+        textBox.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)

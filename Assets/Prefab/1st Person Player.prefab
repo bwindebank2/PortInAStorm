@@ -124,6 +124,8 @@ GameObject:
   - component: {fileID: 2266180394416285882}
   - component: {fileID: 2433899056962954955}
   - component: {fileID: 802975628}
+  - component: {fileID: 2110289250}
+  - component: {fileID: 2110289251}
   m_Layer: 0
   m_Name: 1st Person Player
   m_TagString: Player
@@ -213,6 +215,33 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2480208505384228214}
   m_Enabled: 1
+--- !u!136 &2110289250
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2480208505384228214}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  m_Radius: 0.75
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2110289251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2480208505384228214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 524bbf6602cf2014d811cbdaf377450e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  endTime: 3
 --- !u!1 &2828911693892996231
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +284,7 @@ GameObject:
   - component: {fileID: 4824502381573678330}
   - component: {fileID: 7826873900569502493}
   - component: {fileID: 4824502381573678308}
+  - component: {fileID: 1916774988}
   m_Layer: 0
   m_Name: FPS
   m_TagString: MainCamera
@@ -393,3 +423,23 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &1916774988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4824502381573678328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3652817c4c83d5b4a9450654fa331547, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hand: {fileID: 6000568910508174852}
+  world: {fileID: 0}
+  layerMask: 0
+  heldObject: {fileID: 0}
+  throwForce: 150
+  interactRange: 4
+  grabbing: 0
+  scalechange: {x: -0.5, y: -0.5, z: -0.5}

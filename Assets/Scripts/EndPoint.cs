@@ -5,17 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class EndPoint : MonoBehaviour
 {
+    public int endTime = 3;
+    public int nextLevel;
+
+    private void Start()
+    {
+        
+        nextLevel = SceneManager.GetActiveScene().buildIndex +1;
+        if (nextLevel >= SceneManager.sceneCountInBuildSettings)
+        {
+            nextLevel = 1;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            GameEnd();
+            // obtain reference to player
+            // call load level function and pass index parameter
+            var player = FindObjectOfType<Player>().gameObject;
+            StartCoroutine(player.GetComponent<Player>().LoadLevel(nextLevel));
         }
-    }
-
-    private void GameEnd()
-    {
-        print("quit game");
-        SceneManager.LoadScene("Menu");
     }
 }

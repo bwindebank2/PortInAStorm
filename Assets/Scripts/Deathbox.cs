@@ -9,7 +9,13 @@ public class Deathbox : MonoBehaviour
     {
         if(other.gameObject.tag == ("Player"))
         {
-            SceneManager.LoadScene("Menu");
+            var player = FindObjectOfType<Player>().gameObject;
+            StartCoroutine(player.GetComponent<Player>().Death());
+        }
+
+        if (other.gameObject.tag == ("Grabbable"))
+        {
+            Destroy(other.gameObject);
         }
     }
 }
