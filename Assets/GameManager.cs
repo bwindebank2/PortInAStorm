@@ -7,7 +7,14 @@ public class GameManager : MonoBehaviour
 {
     private void Awake()
     {
-        SetCursor(0);
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            SetCursor(1);
+        }
+        else
+        {
+            SetCursor(0);
+        }
     }
 
     //public void LoadScene(string level)
