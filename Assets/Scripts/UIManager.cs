@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
     public void Awake()
     {
         SetCursor();
-        pauseMenu = GameObject.FindGameObjectWithTag("Pause");
+        //pauseMenu = GameObject.FindGameObjectWithTag("Pause");
         if(pauseMenu != null)
         {
             pauseMenu.SetActive(false);
