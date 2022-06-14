@@ -6,6 +6,18 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private AudioSource pauseSFX;
+
+    [SerializeField] private AudioClip fart1;
+    [SerializeField] private AudioClip fart2;
+    [SerializeField] private AudioClip fart3;
+    [SerializeField] private AudioClip boing1;
+    [SerializeField] private AudioClip boing2;
+    [SerializeField] private AudioClip boing3;
+    [SerializeField] private AudioClip boing4;
+
+    [SerializeField] private int sfxIndex;
+
 
     //[SerializeField] private bool isPaused = false;
 
@@ -24,11 +36,52 @@ public class UIManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             pauseMenu.SetActive(true);
+            PauseSFX();
             Time.timeScale = 0;
             var gameManager = FindObjectOfType<GameManager>().gameObject;
             gameManager.GetComponent<GameManager>().SetCursor(1);
             //pauseMenu.SetActive(!isPaused);
             //isPaused = !isPaused;
+        }
+    }
+
+    public void PauseSFX()
+    {
+        sfxIndex = Random.Range(1, 7);
+        
+        if (sfxIndex == 1)
+        {
+            pauseSFX.PlayOneShot(fart1);
+        }
+
+        if (sfxIndex == 2)
+        {
+            pauseSFX.PlayOneShot(fart2);
+        }
+
+        if (sfxIndex == 3)
+        {
+            pauseSFX.PlayOneShot(fart3);
+        }
+
+        if (sfxIndex == 4)
+        {
+            pauseSFX.PlayOneShot(boing1);
+        }
+
+        if (sfxIndex == 5)
+        {
+            pauseSFX.PlayOneShot(boing2);
+        }
+
+        if (sfxIndex == 6)
+        {
+            pauseSFX.PlayOneShot(boing3);
+        }
+        
+        if (sfxIndex == 7)
+        {
+            pauseSFX.PlayOneShot(boing4);
         }
     }
 
