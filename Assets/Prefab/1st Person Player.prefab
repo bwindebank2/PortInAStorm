@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 1766695523164564661}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 3748057655076333810}
   m_RootOrder: 1
@@ -124,8 +124,8 @@ GameObject:
   - component: {fileID: 2266180394416285882}
   - component: {fileID: 2433899056962954955}
   - component: {fileID: 802975628}
-  - component: {fileID: 2110289250}
   - component: {fileID: 2110289251}
+  - component: {fileID: 33018262}
   m_Layer: 0
   m_Name: 1st Person Player
   m_TagString: Player
@@ -215,20 +215,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2480208505384228214}
   m_Enabled: 1
---- !u!136 &2110289250
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2480208505384228214}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  m_Radius: 0.75
-  m_Height: 3
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2110289251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,8 +232,21 @@ MonoBehaviour:
   bulSpawn: {fileID: 160101333594496653}
   bullet: {fileID: 3834713804363488473, guid: 6708f6cd7c49a37488b8b2d955f155f8, type: 3}
   fireRate: 0
-  bulSpeed: 0
+  bulSpeed: 100
   isGunHeld: 1
+--- !u!114 &33018262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2480208505384228214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a4882abb918ca41bea671ca6ac0d3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gun: {fileID: 5784687140563607066}
 --- !u!1 &2828911693892996231
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,8 +568,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5784687140563607066}
-  m_LocalRotation: {x: -0.03951761, y: -0.05122069, z: -0.0020283668, w: 0.99790317}
-  m_LocalPosition: {x: 0.00000012343104, y: -1.25, z: -5.684342e-14}
+  m_LocalRotation: {x: -0.019950991, y: -0.007978109, z: -0.003585332, w: 0.9997628}
+  m_LocalPosition: {x: -0.0000006855407, y: -1.2500001, z: 0.0000012516975}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5101192327320303613}
@@ -578,7 +577,7 @@ Transform:
   - {fileID: 160101333594496653}
   m_Father: {fileID: 4824502381573678309}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -4.536, y: -5.877, z: 0}
+  m_LocalEulerAnglesHint: {x: -2.29, y: -0.907, z: -0.393}
 --- !u!82 &8243112263521705463
 AudioSource:
   m_ObjectHideFlags: 0

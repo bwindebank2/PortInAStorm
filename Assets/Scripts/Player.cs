@@ -15,14 +15,17 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform bulSpawn;
     [SerializeField] private GameObject bullet;
     [SerializeField] private float fireRate;
-    [SerializeField] private float bulSpeed;
-    [SerializeField] private bool isGunHeld;
+    [SerializeField] private float bulSpeed = 10f;
+    [SerializeField] public bool isGunHeld;
 
     private void Update()
     {
         if(Input.GetMouseButtonDown(0) && isGunHeld)
         {
-            Instantiate(bullet, bulSpawn);
+            GameObject clone;
+            clone = Instantiate(bullet, bulSpawn.position, bulSpawn.rotation);
+            clone.gameObject.GetComponentInChildren<Rigidbody>().velocity = bulSpawn.TransformDirection(Vector3.forward * bulSpeed);
+            Destroy(clone, 2f);
             GunSFX.Play();
         }
     }
