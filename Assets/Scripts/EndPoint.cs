@@ -8,6 +8,8 @@ public class EndPoint : MonoBehaviour
     public int endTime = 3;
     public int nextLevel;
 
+    public AudioSource teleportSource;
+
     private void Start()
     {
         
@@ -24,6 +26,7 @@ public class EndPoint : MonoBehaviour
         {
             // obtain reference to player
             // call load level function and pass index parameter
+            teleportSource.Play();
             var player = FindObjectOfType<Player>().gameObject;
             StartCoroutine(player.GetComponent<Player>().LoadLevel(nextLevel));
         }

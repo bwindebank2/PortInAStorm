@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject optionsMenu;
     [SerializeField] private AudioSource pauseSFX;
+
+    [SerializeField] private bool isPaused = false;
 
     [SerializeField] private AudioClip fart1;
     [SerializeField] private AudioClip fart2;
@@ -31,18 +34,30 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && isPaused == false)
         {
-            pauseMenu.SetActive(true);
-            PauseSFX();
-            Time.timeScale = 0;
-            var gameManager = FindObjectOfType<GameManager>().gameObject;
-            gameManager.GetComponent<GameManager>().SetCursor(1);
-            //pauseMenu.SetActive(!isPaused);
-            //isPaused = !isPaused;
+            Pause();
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape) && isPaused == true)
+        {
+            Resume();
+        }
+    }
+
+    #region Pause Menu
+    private void Pause()
+    {
+        pauseMenu.SetActive(true);
+        isPaused = true;
+        PauseSFX();
+        Time.timeScale = 0;
+        var gameManager = FindObjectOfType<GameManager>().gameObject;
+        gameManager.GetComponent<GameManager>().SetCursor(1);
+        //pauseMenu.SetActive(!isPaused);
+        //isPaused = !isPaused;
     }
 
     public void PauseSFX()
@@ -91,11 +106,19 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1;
         var gameManager = FindObjectOfType<GameManager>().gameObject;
         gameManager.GetComponent<GameManager>().SetCursor(0);
+        isPaused = false;
+
+        if (optionsMenu.activeSelf == true)
+        {
+            optionsMenu.SetActive(false);
+        }
     }
 
     public void Settings()
     {
         // nothing yet
+        pauseMenu.SetActive(false);
+        optionsMenu.SetActive(true);
         Debug.Log("Settings");
     }
 
@@ -132,4 +155,7 @@ public class UIManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
     }
+    #endregion
+
+    
 }

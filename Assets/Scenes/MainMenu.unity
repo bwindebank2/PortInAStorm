@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
@@ -146,7 +146,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107203429}
-  m_LocalRotation: {x: -0, y: -0.37960756, z: -0, w: 0.92514765}
+  m_LocalRotation: {x: -0, y: -0.37137124, z: -0, w: 0.9284845}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2770,6 +2770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endTime: 3
   nextLevel: 0
+  teleportSource: {fileID: 0}
 --- !u!65 &1625801463
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2813,6 +2814,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 0}
+  pauseSFX: {fileID: 0}
+  fart1: {fileID: 0}
+  fart2: {fileID: 0}
+  fart3: {fileID: 0}
+  boing1: {fileID: 0}
+  boing2: {fileID: 0}
+  boing3: {fileID: 0}
+  boing4: {fileID: 0}
+  sfxIndex: 0
 --- !u!4 &1718372288
 Transform:
   m_ObjectHideFlags: 0
