@@ -34,6 +34,11 @@ public class MainMenu : MonoBehaviour
         mainMenu.SetActive(false);
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     public void BackToMain()
     {
         optionsMenu.SetActive(false);

@@ -225,6 +225,7 @@ public class UIManager : MonoBehaviour
                 //player.GetComponent<CharacterController>().enabled = true;
                 player.GetComponent<Player>().enabled = true;
                 player.GetComponentInChildren<PlayerInteract>().enabled = true;
+                player.GetComponentInChildren<MouseLook>().enabled = true;
                 // enable player movement
                 // enable interaction
                 // enable gun
@@ -233,6 +234,7 @@ public class UIManager : MonoBehaviour
                 //player.GetComponent<CharacterController>().enabled = false;
                 player.GetComponent<Player>().enabled = false;
                 player.GetComponentInChildren<PlayerInteract>().enabled = false;
+                player.GetComponentInChildren<MouseLook>().enabled = false;
                 // disable player movement
                 // disable interaction
                 // disable gun

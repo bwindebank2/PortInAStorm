@@ -6,10 +6,12 @@ TagManager:
   tags:
   - player
   - Ground
-  - Grabbable
   - Pause
   - MainAudio
   - Spawn
+  - Entity
+  - Interactable
+  - Projectile
   layers:
   - Default
   - TransparentFX

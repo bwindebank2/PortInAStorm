@@ -25,7 +25,9 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private float interactRange = 3;
 
     [SerializeField] private bool grabbing = false;
-    
+
+    [SerializeField] private string objectTag = "Entity";
+
     [SerializeField] private Vector3 scalechange = new Vector3(0.5f, 0.5f, 0.5f);
 
     public void Update()
@@ -44,7 +46,7 @@ public class PlayerInteract : MonoBehaviour
                 var target = hit.collider.gameObject;
                 Debug.Log(target);
 
-                if (target.tag == "Grabbable" && grabbing != true)
+                if (target.tag == objectTag && grabbing != true)
                 { // pick it up
                     SetToHeld(target);
                     Debug.Log("Pick up the " + target);

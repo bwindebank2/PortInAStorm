@@ -54,4 +54,11 @@ public class GameManager : MonoBehaviour
         crossFade.FadeOut();
     }
 
+    public void SetMouseSens(float sliderValue)
+    {
+        var player = FindObjectOfType<Player>().gameObject;
+        player.GetComponentInChildren<MouseLook>().mouseSensitivity = sliderValue;
+        PlayerPrefs.SetFloat("MouseSens", sliderValue);
+    }
+
 }
